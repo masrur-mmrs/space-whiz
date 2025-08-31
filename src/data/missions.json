@@ -1,0 +1,19 @@
+{
+    "sun-blast" : [
+        {
+            "thumbnail" : "☀️",
+            "title" : "Meet the Sun",
+            "subtitle" : "Learn about our amazing star"
+        },
+        {
+            "thumbnail" : "🔥",
+            "title" : "What is Solar Flare",
+            "subtitle" : "Discover solar explosions"
+        },
+        {
+            "thumbnail" : "🌍",
+            "title" : "Why it matters",
+            "subtitle" : "How it affects Earth"
+        }
+    ]
+}

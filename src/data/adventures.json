@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Sun Blast",
+        "image": "☀️",
+        "completed" : false
+    },
+    {
+        "title": "Aurora Dance",
+        "image": "🌌",
+        "completed" : false
+    },
+    {
+        "title": "Satellite Shield",
+        "image": "🛰️",
+        "completed" : false
+    },
+    {
+        "title": "Astro Storm",
+        "image": "⚡️",
+        "completed" : false
+    },
+    {
+        "title": "Power Wave",
+        "image": "🌊",
+        "completed" : false
+    }, 
+    {
+        "title": "Earth Gaurd",
+        "image": "🌏",
+        "completed" : false
+    }
+]
