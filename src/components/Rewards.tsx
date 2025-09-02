@@ -10,7 +10,7 @@ const Rewards: React.FC = ({}) => {
     const completedAdventures = adventures.filter(adventure => adventure.completed).length;
 
     return (
-        <div className="flex flex-col items-center justify-center mt-148 sm:mt-108 mb-10 ml-5 mr-5 gap-1.5">
+        <div className="flex flex-col items-center justify-center mt-148 sm:mt-152 mb-10 ml-5 mr-5 gap-1.5">
             <Navbar title="My Rewards"/>
             <BadgeCollectionCard completed={completedAdventures}/>
             <RewardsList adventures={adventures}/>

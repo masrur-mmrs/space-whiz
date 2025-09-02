@@ -10,7 +10,7 @@ import HelpButton from './buttons/HelpButton';
 const App: React.FC = ({}) => {
     const adventures = adventuresData as Adventures[];
     return (
-        <div className="flex flex-col items-center justify-center absolute z-10 gap-1 mt-114">
+        <div className="flex flex-col items-center justify-center absolute z-10 gap-1 mt-148">
             <HeroSection/>
             <AdventureButton/>
             <AdventureList adventures={adventures}/>

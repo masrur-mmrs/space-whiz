@@ -1,32 +1,37 @@
 [
     {
-        "title": "Sun Blast",
+        "title": "Meet the Sun",
         "image": "☀️",
         "completed" : false
     },
     {
-        "title": "Aurora Dance",
+        "title": "Dance of Lights",
         "image": "🌌",
         "completed" : false
     },
     {
-        "title": "Satellite Shield",
-        "image": "🛰️",
+        "title": "The Lost Tractor",
+        "image": "🚜",
         "completed" : false
     },
     {
-        "title": "Astro Storm",
+        "title": "The Silent Sky",
+        "image": "✈️",
+        "completed" : false
+    },
+    {
+        "title": "Mission: Safe Zone",
+        "image": "🧑🏻‍🚀",
+        "completed" : false
+    }, 
+    {
+        "title": "The Blackout City",
         "image": "⚡️",
         "completed" : false
     },
     {
-        "title": "Power Wave",
-        "image": "🌊",
-        "completed" : false
-    }, 
-    {
-        "title": "Earth Gaurd",
+        "title": "Guardian of Earth",
         "image": "🌏",
-        "completed" : false
+        "completed": false
     }
 ]
