@@ -59,6 +59,24 @@ progress::-moz-progress-bar {
   border-radius: 9999px;
 }
 
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  border: none;
+}
+
 .glow-on-hover:hover {
   -webkit-box-shadow:0px 0px 105px 3px rgba(16,64,210,0.5);
   -moz-box-shadow: 0px 0px 105px 3px rgba(16,64,210,0.5);

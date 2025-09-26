@@ -20,7 +20,7 @@ const Mission: React.FC = () => {
     return (
         <div className="flex flex-col items-center justify-center ml-5 mr-5 :w-fit">
             <Navbar title={mission}/>
-            <VideoPlayer src={videos.link}/>
+            <VideoPlayer src={videos?.link || ""}/>
             <LearningOutcomeCard learningOutcomes={learningObjective}></LearningOutcomeCard>
         </div>
     );

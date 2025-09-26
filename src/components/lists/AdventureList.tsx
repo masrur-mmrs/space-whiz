@@ -11,7 +11,7 @@ const AdventureList: React.FC<AdventureListProps> = ({ adventures }) => {
             {
                 adventures.map((adventure, i) => 
                     <AdventureCard
-                        key={adventure.title}
+                        key={i}
                         adventureTitle={adventure.title}
                         adventureImage={adventure.image}
                         completed={adventure.completed}
