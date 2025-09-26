@@ -5,13 +5,17 @@ import Link from 'next/link';
 
 interface VideoCardProps {
     video: Video;
+    key: number | string;
 }
 
 
-const VideoCard: React.FC<VideoCardProps> = ({ video }) => {
+const VideoCard: React.FC<VideoCardProps> = ({ video, key }) => {
     return (
         <HoverScaleWrapper style="w-full h-full">
-            <Link href={`/mission/${video.title.toLowerCase().replace(/\s+/g, '-')}`}>
+            <Link
+                key={key}
+                href={`/mission/${video.title.toLowerCase().replace(/\s+/g, '-')}`}
+            >
                 <div
                     className="w-full h-52 rounded-2xl bg-space-blue shadow-2xl text-center glow-on-hover"
                 >

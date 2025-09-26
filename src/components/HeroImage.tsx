@@ -12,6 +12,7 @@ const HeroImage: React.FC<HeroImageProps> = ({ imageSrc }) => {
             alt="Space Whizz Logo"
             width={250}
             height={250}
+            priority
         />
     );
 };

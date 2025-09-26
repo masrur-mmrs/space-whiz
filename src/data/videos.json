@@ -1,14 +1,14 @@
 {
     "what-is-the-sun" : {
-        "link" : "https://www.youtube.com/watch?v=oHHSSJDJ4oo&pp=ygUXa3Vyemdlc2FndCBzb2xhciBmbGFyZXM%3D",
+        "link" : "https://stream.mux.com/5LWTJMD6fxkstkiy00OiT1JrcMDTxbEP012uA55pXTKP8.m3u8",
         "completed": false
     },
     "solar-wind-and-solar-flare" : {
-        "link" : "https://www.youtube.com/watch?v=oHHSSJDJ4oo&pp=ygUXa3Vyemdlc2FndCBzb2xhciBmbGFyZXM%3D",
+        "link" : "https://stream.mux.com/z02FwmpSMrtdcjaEwoh2C2F8BBHDTuMshy6HUulg9R9o.m3u8",
         "completed": false
     },
     "earth-and-the-sun" : {
-        "link" : "https://www.youtube.com/watch?v=oHHSSJDJ4oo&pp=ygUXa3Vyemdlc2FndCBzb2xhciBmbGFyZXM%3D",
+        "link" : "",
         "completed": false
     }
 }

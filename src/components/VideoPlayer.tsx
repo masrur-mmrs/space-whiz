@@ -1,8 +1,6 @@
 "use client"
 import React, { useState, useRef, useCallback } from "react";
-import ReactPlayer from "react-player";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
+import Player from "next-video/player";
 import ProgressBar from "./ProgressBar";
 
 interface VideoPlayerProps {
@@ -10,9 +8,9 @@ interface VideoPlayerProps {
 }
 
 
-const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
-    const playerRef = useRef<HTMLVideoElement | null>(null);
+const VideoPlayer: React.FC<VideoPlayerProps> = ({src}) => {
     const [progress, setProgress] = useState<number>(0);
+    const playerRef = useRef<HTMLVideoElement | null>(null);
 
     const setPlayerRef = useCallback((player: HTMLVideoElement) => {
         if (!player) return;
@@ -26,16 +24,10 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center max-w-[80vw]">
-            <ReactPlayer
+        <div className="flex flex-col items-center justify-center">
+            <Player
                 src={src}
                 ref={setPlayerRef}
-                width="100%"
-                height="100%"
-                controls={false}
-                previewTabIndex={0}
-                pip={true}
-                playIcon={<FontAwesomeIcon icon={faPlayCircle}/>}
                 style={{
                     position: "relative",
                     width: "400px",
@@ -44,6 +36,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src }) => {
                     overflow: "hidden",
                     boxShadow: "0 4px 20px rgba(0, 0, 0, 0.4)"
                 }}
+                controls
                 onTimeUpdate={handleTimeUpdate}
             />
             <ProgressBar value={progress}/>
