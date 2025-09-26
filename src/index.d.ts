@@ -22,4 +22,18 @@ declare interface Mission {
     [key: string]: { link: string; completed: boolean };
 }
 
+declare interface Guide {
+    icon: import("@fortawesome/fontawesome-svg-core").IconProp;
+    iconBackgroundStyles: string;
+    title: string;
+    description: string;
+    gradientStyles: string;
+}
+
+declare interface FAQ {
+    iconColor: string;
+    question: string;
+    answer: string;
+}
+
 declare type Language = "English" | "Bangla";
