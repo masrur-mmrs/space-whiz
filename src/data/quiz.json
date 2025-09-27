@@ -1,0 +1,46 @@
+{
+    "what-is-the-sun" : [
+        {
+            "question": "What is the Sun?",
+            "options": [
+                "A planet", 
+                "A star", 
+                "A moon",
+                "A comet"
+            ],
+            "answer": "A star"
+        },
+        {
+            "question": "What is a solar flare?",
+            "options": [
+                "A type of planet",
+                "A burst of energy from the Sun",
+                "A kind of rocket",
+                "A space station"
+            ],
+            "answer": "A burst of energy from the Sun"
+        },
+        {
+            "question": "How does space weather affect Earth?",
+            "options": [
+                "It doesn't affect Earth",
+                "It can disrupt technology",
+                "It causes rain",
+                "It can cause earthquakes"
+            ],
+            "answer": "It can disrupt technology"
+        },
+        {
+            "question": "What protects Earth from harmful space radiation?",
+            "options": [
+                "The Moon",
+                "Clouds",
+                "Earth's magnetic field",
+                "The Sun"
+            ],
+            "answer": "Earth's magnetic field"
+        }
+    ],
+    "solar-wind-and-solar-flare" : [],
+    "earth-and-the-sun" : []
+}

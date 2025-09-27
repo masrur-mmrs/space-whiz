@@ -36,4 +36,13 @@ declare interface FAQ {
     answer: string;
 }
 
+declare interface Quiz {
+    question: string;
+    options: string[];
+    answer: string;
+}
+declare interface QuizData {
+    [key: string]: Quiz[];
+}
+
 declare type Language = "English" | "Bangla";

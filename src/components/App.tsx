@@ -6,7 +6,6 @@ import adventuresData from '../data/adventures.json';
 import RewardsButton from './buttons/RewardsButton';
 import SettingsButton from './buttons/SettingsButton';
 import HelpButton from './buttons/HelpButton';
-// import { Adventures } from '..';
 
 const App: React.FC = ({}) => {
     const adventures = adventuresData as Adventures[];
