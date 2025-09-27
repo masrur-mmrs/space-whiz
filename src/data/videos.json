@@ -1,14 +1,96 @@
 {
-    "what-is-the-sun" : {
-        "link" : "https://stream.mux.com/5LWTJMD6fxkstkiy00OiT1JrcMDTxbEP012uA55pXTKP8.m3u8",
-        "completed": false
+    "meet-the-sun" : {
+        "what-is-the-sun" : {
+            "link" : "https://stream.mux.com/5LWTJMD6fxkstkiy00OiT1JrcMDTxbEP012uA55pXTKP8.m3u8",
+            "completed": false
+        },
+        "solar-wind-and-solar-flare" : {
+            "link" : "https://stream.mux.com/z02FwmpSMrtdcjaEwoh2C2F8BBHDTuMshy6HUulg9R9o.m3u8",
+            "completed": false
+        },
+        "earth-and-the-sun" : {
+            "link" : "https://stream.mux.com/5LWTJMD6fxkstkiy00OiT1JrcMDTxbEP012uA55pXTKP8.m3u8",
+            "completed": false
+        }
     },
-    "solar-wind-and-solar-flare" : {
-        "link" : "https://stream.mux.com/z02FwmpSMrtdcjaEwoh2C2F8BBHDTuMshy6HUulg9R9o.m3u8",
-        "completed": false
+    "dance-of-lights" : {
+        "aurora-magic" : {
+            "link" : "https://stream.mux.com/5LWTJMD6fxkstkiy00OiT1JrcMDTxbEP012uA55pXTKP8.m3u8",
+            "completed": false
+        },
+        "why-do-auroras-happen" : {
+            "link" : "https://stream.mux.com/z02FwmpSMrtdcjaEwoh2C2F8BBHDTuMshy6HUulg9R9o.m3u8",
+            "completed": false
+        },
+        "aurora-stories" : {
+            "link" : "https://stream.mux.com/5LWTJMD6fxkstkiy00OiT1JrcMDTxbEP012uA55pXTKP8.m3u8",
+            "completed": false
+        }
     },
-    "earth-and-the-sun" : {
-        "link" : "https://stream.mux.com/5LWTJMD6fxkstkiy00OiT1JrcMDTxbEP012uA55pXTKP8.m3u8",
-        "completed": false
+    "the-lost-tractor" : {
+        "how-farmers-use-satellites" : {
+            "link" : "https://stream.mux.com/5LWTJMD6fxkstkiy00OiT1JrcMDTxbEP012uA55pXTKP8.m3u8",
+            "completed": false
+        },
+        "what-happens-in-a-storm" : {
+            "link" : "https://stream.mux.com/z02FwmpSMrtdcjaEwoh2C2F8BBHDTuMshy6HUulg9R9o.m3u8",
+            "completed": false
+        },
+        "aurora-stories" : {
+            "link" : "https://stream.mux.com/5LWTJMD6fxkstkiy00OiT1JrcMDTxbEP012uA55pXTKP8.m3u8",
+            "completed": false
+        }
+    },
+    "the-silent-sky" : {
+        "how-pilots-communicate" : {
+            "link" : "https://stream.mux.com/5LWTJMD6fxkstkiy00OiT1JrcMDTxbEP012uA55pXTKP8.m3u8",
+            "completed": false
+        },
+        "when-signals-vanish" : {
+            "link" : "https://stream.mux.com/z02FwmpSMrtdcjaEwoh2C2F8BBHDTuMshy6HUulg9R9o.m3u8",
+            "completed": false
+        },
+        "why-it-matters" : {
+            "link" : "https://stream.mux.com/5LWTJMD6fxkstkiy00OiT1JrcMDTxbEP012uA55pXTKP8.m3u8",
+            "completed": false
+        }
+    },
+    "mission-safe-zone" : {
+        "life-in-space" : {
+            "link" : "https://stream.mux.com/5LWTJMD6fxkstkiy00OiT1JrcMDTxbEP012uA55pXTKP8.m3u8",
+            "completed": false
+        },
+        "danger-alert" : {
+            "link" : "https://stream.mux.com/z02FwmpSMrtdcjaEwoh2C2F8BBHDTuMshy6HUulg9R9o.m3u8",
+            "completed": false
+        },
+        "the-safe-zone" : {
+            "link" : "https://stream.mux.com/5LWTJMD6fxkstkiy00OiT1JrcMDTxbEP012uA55pXTKP8.m3u8",
+            "completed": false
+        }
+    },
+    "the-blackout-city" : {
+        "how-power-travels" : {
+            "link" : "https://stream.mux.com/5LWTJMD6fxkstkiy00OiT1JrcMDTxbEP012uA55pXTKP8.m3u8",
+            "completed": false
+        },
+        "storm-attack" : {
+            "link" : "https://stream.mux.com/z02FwmpSMrtdcjaEwoh2C2F8BBHDTuMshy6HUulg9R9o.m3u8",
+            "completed": false
+        },
+        "big-blackouts" : {
+            "link" : "https://stream.mux.com/5LWTJMD6fxkstkiy00OiT1JrcMDTxbEP012uA55pXTKP8.m3u8",
+            "completed": false
+        }
+    },
+    "guardian-of-earth" : {
+        "recap-adventure" : {
+            "link" : "https://stream.mux.com/z02FwmpSMrtdcjaEwoh2C2F8BBHDTuMshy6HUulg9R9o.m3u8",
+            "completed": false
+        },
+        "you-are-an-earth-guardian" : {
+            "link" : "https://stream.mux.com/5LWTJMD6fxkstkiy00OiT1JrcMDTxbEP012uA55pXTKP8.m3u8",
+            "completed": false
+        }
     }
 }

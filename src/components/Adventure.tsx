@@ -7,6 +7,10 @@ import VideoList from '@/components/lists/VideoList';
 import LiveSolarData from '@/components/cards/LiveSolarData';
 import missionsData from "@/data/missions.json"
 
+interface Missions {
+  [key: string]: Video[];
+}
+
 const Adventure: React.FC = () => {
     const params = useParams<{adventure: string}>();
     const mission = params.adventure.replaceAll("-", " ").replace(/\b\w/g, (c) => c.toUpperCase());

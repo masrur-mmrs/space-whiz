@@ -1,15 +1,18 @@
 "use client"
 import React, { useState, useRef, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import Player from "next-video/player";
 import ProgressBar from "./ProgressBar";
 
 interface VideoPlayerProps {
     src: string;
+    level: string;
+    markVideoCompleted: () => void;
 }
 
-
-const VideoPlayer: React.FC<VideoPlayerProps> = ({src}) => {
+const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, level, markVideoCompleted }) => {
     const [progress, setProgress] = useState<number>(0);
+    const router = useRouter();
     const playerRef = useRef<HTMLVideoElement | null>(null);
 
     const setPlayerRef = useCallback((player: HTMLVideoElement) => {
@@ -22,6 +25,11 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({src}) => {
         if (!player || !player.duration) return;
         setProgress((player.currentTime / player.duration) * 100)
     };
+
+    const handleVideoEnd = useCallback(() => {
+        markVideoCompleted();
+        router.replace(`/quiz/${level}`);
+    }, [markVideoCompleted, router, level]);
 
     return (
         <div className="flex flex-col items-center justify-center">
@@ -38,12 +46,12 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({src}) => {
                 }}
                 controls
                 onTimeUpdate={handleTimeUpdate}
+                onEnded={handleVideoEnd}
             />
             <ProgressBar value={progress}/>
             <span className="bg-stellar-yellow p-2 mt-4 rounded-3xl cursor-default font-semibold text-shadow-sm">{Math.round(progress)}% watched</span>
         </div>
     );
 };
-
 
 export default VideoPlayer;

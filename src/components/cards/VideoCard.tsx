@@ -9,9 +9,9 @@ interface VideoCardProps {
 }
 
 
-const VideoCard: React.FC<VideoCardProps> = ({ video, key }) => {
+const VideoCard: React.FC<VideoCardProps> = ({ video }) => {
     return (
-        <HoverScaleWrapper style="w-full h-full" key={key}>
+        <HoverScaleWrapper style="w-full h-full">
             <Link href={`/mission/${video.title.toLowerCase().replace(/\s+/g, '-')}`}>
                 <div
                     className="w-full h-52 rounded-2xl bg-space-blue shadow-2xl text-center glow-on-hover"

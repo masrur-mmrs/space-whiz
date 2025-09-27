@@ -10,16 +10,21 @@ declare interface Video {
     subtitle: string;
 }
 
+declare interface Mission {
+  link: string;
+  completed: boolean;
+}
+
+declare interface Chapter {
+  [key: string]: Mission;
+}
+
 declare interface Missions {
-    [key : string]: Array<string, Video>;
+  [key: string]: Chapter;
 }
 
 declare interface LearningOutcomes {
     [key: string]: string[];
-}
-
-declare interface Mission {
-    [key: string]: { link: string; completed: boolean };
 }
 
 declare interface Guide {

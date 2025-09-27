@@ -13,7 +13,7 @@ const App: React.FC = ({}) => {
         <div className="flex flex-col items-center justify-center absolute z-10 gap-1 mt-148">
             <HeroSection/>
             <AdventureButton/>
-            <AdventureList adventures={adventures}/>
+            <AdventureList adventuresList={adventures}/>
             <RewardsButton/>
             <SettingsButton/>
             <HelpButton/>
