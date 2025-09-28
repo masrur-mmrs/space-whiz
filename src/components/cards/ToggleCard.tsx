@@ -10,12 +10,24 @@ interface ToggleCardProps {
     iconColor: string;
     title: string;
     description: string;
-    state: boolean
+    type: string
+    state: boolean;
+    setPreferences: (value: Preferences | ((val: Preferences) => Preferences)) => void;
 }
 
 
-const ToggleCard: React.FC<ToggleCardProps> = ({ title, icon, iconColor, description, state }) => {
+const ToggleCard: React.FC<ToggleCardProps> = ({ title, icon, iconColor, description, type, state, setPreferences }) => {
     const [isOn, setIsOn] = useState(state);
+
+    const handleToggle = (state: boolean) => {
+        setIsOn(state);
+        setPreferences((prev) => {
+            return {
+                ...prev,
+                [type]: state
+            }
+        })
+    }
     
     return (
         <div className="flex flex-row items-center justify-between bg-space-blue shadow-sm p-5 gap-3.5 w-full rounded-3xl select-none border transition-transform ease-in-out duration-300">
@@ -25,7 +37,7 @@ const ToggleCard: React.FC<ToggleCardProps> = ({ title, icon, iconColor, descrip
                 <p className="text-sm text-gray-500">{description}</p>
             </div>
             <div className="float-end">
-                <ToggleSwitch isOn={isOn} setIsOn={setIsOn}/>
+                <ToggleSwitch isOn={isOn} setIsOn={handleToggle}/>
             </div>
         </div>
     );

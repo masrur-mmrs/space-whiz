@@ -1,10 +1,12 @@
 import React from 'react';
 import ToggleCard from '../cards/ToggleCard';
 import { faSatellite, faClosedCaptioning, faLanguage} from '@fortawesome/free-solid-svg-icons';
-import preferences from "@/data/preferences.json"
+import preferencesData from "@/data/preferences.json"
 import SelectCard from '../cards/SelectCard';
+import useLocalStorage from '@/hooks/useLocalStorage';
 
 const SettingsList: React.FC = ({}) => {
+    const [preferences, setPreferences] = useLocalStorage<Preferences>("preferences", preferencesData as Preferences)
     return (
         <div className="flex flex-col items-center justify-center gap-4">
             <ToggleCard
@@ -12,21 +14,27 @@ const SettingsList: React.FC = ({}) => {
                 iconColor="blue"
                 title="Use Live NASA Data"
                 description="Get real-time space weather updates"
+                type="liveData"
                 state={preferences.liveData}
+                setPreferences={setPreferences}
             />
             <ToggleCard
                 icon={faClosedCaptioning}
                 iconColor="violet"
                 title="Subtitles"
                 description="Show text during videos"
+                type="subtitles"
                 state={preferences.subtitles}
+                setPreferences={setPreferences}
             />
             <SelectCard
                 icon={faLanguage}
                 iconColor="yellow"
                 title="Language"
                 description="Choose your preferred language"
-                state={preferences.language as Language}
+                type="language"
+                state={preferences.language}
+                setPreferences={setPreferences}
             />
         </div>
     );

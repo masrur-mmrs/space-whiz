@@ -1,5 +1,5 @@
 {
     "liveData" : false,
-    "subtitles" : false,
+    "subtitles" : true,
     "language" : "English"
 }

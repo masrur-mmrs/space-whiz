@@ -1,13 +1,15 @@
 "use client";
 
-import React, { useState, KeyboardEvent } from "react";
+import React, { useState, KeyboardEvent, useEffect, useCallback } from "react";
 import { LayoutGroup, motion } from "motion/react";
 
 interface LanguageSelectProps {
+    type: string;
     state: Language;
+    setPreferences: (value: Preferences | ((val: Preferences) => Preferences)) => void;
 }
 
-const LanguageSelect : React.FC<LanguageSelectProps> = ({ state }) => {
+const LanguageSelect : React.FC<LanguageSelectProps> = ({ type, state, setPreferences }) => {
     const [value, setValue] = useState<Language>(state);
     const options: Language[] = ["English", "Bangla"];
 
@@ -16,6 +18,23 @@ const LanguageSelect : React.FC<LanguageSelectProps> = ({ state }) => {
         if (e.key === "ArrowRight") setValue(options[(i + 1) % options.length]);
         if (e.key === "ArrowLeft") setValue(options[(i - 1 + options.length) % options.length]);
     };
+
+    const updatePreferences = useCallback(
+      () => {
+        console.log("run")
+        setPreferences((prev) => {
+            return {
+                ...prev,
+                [type]: value,
+            }
+        })
+      },
+      [type, value, setPreferences],
+    )
+    
+    useEffect(() => { 
+        updatePreferences();
+    }, [value]);
 
     return (
         <div className="grid place-items-center">

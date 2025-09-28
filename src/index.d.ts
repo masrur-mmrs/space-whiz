@@ -50,4 +50,10 @@ declare interface QuizData {
     [key: string]: Quiz[];
 }
 
+declare interface Preferences {
+    liveData: boolean;
+    subtitles: boolean;
+    language: Language;
+}
+
 declare type Language = "English" | "Bangla";

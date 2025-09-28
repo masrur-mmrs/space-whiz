@@ -10,11 +10,13 @@ interface SelectCardProps {
     iconColor: string;
     title: string;
     description: string;
+    type: string;
     state: Language
+    setPreferences: (value: Preferences | ((val: Preferences) => Preferences)) => void;
 }
 
 
-const SelectCard: React.FC<SelectCardProps> = ({ icon, iconColor, title, description, state }) => {
+const SelectCard: React.FC<SelectCardProps> = ({ icon, iconColor, title, description, type, state, setPreferences }) => {
     return (
         <div className="flex flex-col items-center justify-center bg-space-blue shadow-sm p-5 gap-3.5 w-full rounded-3xl select-none border transition-transform ease-in-out duration-300">
             <div className="flex flex-row items-center justify-between w-full">
@@ -26,7 +28,11 @@ const SelectCard: React.FC<SelectCardProps> = ({ icon, iconColor, title, descrip
                 <div></div>
                 <div></div>
             </div>
-            <SelectLanguage state={state}/>
+            <SelectLanguage 
+                type={type} 
+                state={state} 
+                setPreferences={setPreferences}
+            />
         </div>
     );
 };
