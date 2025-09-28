@@ -56,4 +56,12 @@ declare interface Preferences {
     language: Language;
 }
 
+declare interface Rewards {
+    [key: string] : {
+        badge: string;
+        words: string;
+        emoji: string;
+    }
+}
+
 declare type Language = "English" | "Bangla";

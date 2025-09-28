@@ -1,0 +1,102 @@
+{
+  "what-is-the-sun": {
+    "badge": "Sun Explorer",
+    "words": "You mastered the secrets of solar flares!",
+    "emoji": "☀️"
+  },
+  "earth-and-the-sun": {
+    "badge": "Orbit Observer",
+    "words": "You discovered how Earth and Sun dance together in space!",
+    "emoji": "🌍☀️"
+  },
+  "solar-wind-and-solar-flare": {
+    "badge": "Storm Chaser",
+    "words": "You unlocked the mystery of powerful solar blasts!",
+    "emoji": "💨🔥"
+  },
+  "aurora-magic": {
+    "badge": "Aurora Dreamer",
+    "words": "You uncovered the glowing magic of the northern lights!",
+    "emoji": "✨🌌"
+  },
+  "why-do-auroras-happen": {
+    "badge": "Light Scientist",
+    "words": "You learned the secret recipe behind nature’s glowing skies!",
+    "emoji": "🔬🌈"
+  },
+  "aurora-stories": {
+    "badge": "Sky Storyteller",
+    "words": "You explored amazing tales of shimmering skies!",
+    "emoji": "📖🌠"
+  },
+  "how-farmers-use-satellites": {
+    "badge": "Space Farmer",
+    "words": "You found out how satellites help crops grow strong!",
+    "emoji": "🚜🛰️"
+  },
+  "what-happens-in-a-storm": {
+    "badge": "Cosmic Detective",
+    "words": "You uncovered the hidden clues of space storms!",
+    "emoji": "🕵️‍♂️⚡"
+  },
+  "aurora-stories-quebec-blackout-starlink-loss-simplified": {
+    "badge": "History Keeper",
+    "words": "You learned how space storms changed our world’s stories!",
+    "emoji": "📜⚡"
+  },
+  "how-pilots-communicate": {
+    "badge": "Sky Navigator",
+    "words": "You discovered how pilots talk through the skies!",
+    "emoji": "✈️📡"
+  },
+  "when-signals-vanish": {
+    "badge": "Signal Sleuth",
+    "words": "You solved the puzzle of vanishing messages from space!",
+    "emoji": "📶❌"
+  },
+  "why-it-matters": {
+    "badge": "Earth Protector",
+    "words": "You found out why space weather is so important for us all!",
+    "emoji": "🌍🛡️"
+  },
+  "life-in-space": {
+    "badge": "Space Adventurer",
+    "words": "You explored what it takes to live among the stars!",
+    "emoji": "👩‍🚀🌌"
+  },
+  "danger-alert": {
+    "badge": "Storm Watcher",
+    "words": "You learned how to spot and prepare for space danger!",
+    "emoji": "🚨⚡"
+  },
+  "the-safe-zone": {
+    "badge": "Shield Builder",
+    "words": "You built the safe zones that protect us from space storms!",
+    "emoji": "🛡️🏠"
+  },
+  "how-power-travels": {
+    "badge": "Energy Explorer",
+    "words": "You discovered how power races across the Earth!",
+    "emoji": "🔌🌐"
+  },
+  "storm-attack": {
+    "badge": "Space Defender",
+    "words": "You faced the storm’s power and stood strong!",
+    "emoji": "⚔️🌪️"
+  },
+  "big-blackouts": {
+    "badge": "Power Guardian",
+    "words": "You uncovered how giant storms can turn off the lights!",
+    "emoji": "💡❌"
+  },
+  "recap-adventure": {
+    "badge": "Memory Master",
+    "words": "You pieced together all the secrets you’ve learned so far!",
+    "emoji": "🧠📚"
+  },
+  "you-are-an-earth-guardian": {
+    "badge": "Earth Guardian",
+    "words": "Congratulations! You became the protector of our planet!",
+    "emoji": "🌍👑"
+  }
+}
