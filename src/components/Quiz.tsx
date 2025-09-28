@@ -6,6 +6,7 @@ import QuizCard from './cards/QuizCard';
 import ProgressBar from './ProgressBar';
 import QuizCompleteCard from './cards/QuizCompleteCard';
 import quizData from "@/data/quiz.json"
+import NextQuestion from './NextQuestion';
 
 interface QuizSet {
     [key: string] : QuizData
@@ -17,6 +18,7 @@ const Quiz: React.FC = ({}) => {
     const [adventure, setAdventure] = useState<string>("");
     const [questionNumber, setQuestionNumber] = useState<number>(0);
     const [correctAnswers, setCorrectAnswers] = useState<number>(0);
+    const [showTimer, setShowTimer] = useState<boolean>(false);
     
     const level = params.quiz.replaceAll("-", " ").replace(/\b\w/g, (c) => c.toUpperCase())
     const quizSet = quizData as QuizSet
@@ -40,24 +42,27 @@ const Quiz: React.FC = ({}) => {
     }
 
     return (
-        <>
+        <div className="flex flex-col items-center justify-center">
             <Navbar title={`${level} - Quiz`}/>
             <ProgressBar value={20*(questionNumber+ 1)} color="#1142d4"/>
             <p className="text-center my-4 text-gray-400">{(questionNumber<4)?`Questiostion ${questionNumber + 1} of 4`:`All Complete!`}</p>
             {(quiz.length > 0) &&
                 (
-                    (questionNumber < 4)?(<QuizCard 
+                    (questionNumber < 4)?
+                    (<QuizCard
                         question={quiz[questionNumber]!.question}
                         options={quiz[questionNumber]!.options}
                         answer={quiz[questionNumber]!.answer}
                         setCorrctAnswers={setCorrectAnswers}
                         setQuestionNumber={setQuestionNumber}
+                        setShowTimer={setShowTimer}
                     />) 
                     :
                     (<QuizCompleteCard level={params.quiz} correctAnswers={correctAnswers} resetQuiz={resetQuiz}/>)
                 )
             }
-        </>
+            {showTimer && <NextQuestion questionNumber={questionNumber}/>}
+        </div>
     );
 };
 

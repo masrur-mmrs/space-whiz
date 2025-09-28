@@ -9,10 +9,11 @@ interface QuizCardProps {
     answer: string;
     setCorrctAnswers: React.Dispatch<React.SetStateAction<number>>;
     setQuestionNumber: React.Dispatch<React.SetStateAction<number>>;
+    setShowTimer: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 
-const QuizCard: React.FC<QuizCardProps> = ({question, options, answer, setCorrctAnswers, setQuestionNumber}) => {
+const QuizCard: React.FC<QuizCardProps> = ({question, options, answer, setCorrctAnswers, setQuestionNumber, setShowTimer}) => {
     const [correct, setCorrect] = useState<boolean | undefined>(undefined);
     const [selectedOption, setSelectedOption] = useState<string>("");
 
@@ -30,6 +31,7 @@ const QuizCard: React.FC<QuizCardProps> = ({question, options, answer, setCorrct
         } else {
             setCorrect(false);
         }
+        setShowTimer(true);
         setTimeout(() => {
             setQuestionNumber((prev) => {
                 if (prev < 4) {
@@ -38,7 +40,9 @@ const QuizCard: React.FC<QuizCardProps> = ({question, options, answer, setCorrct
                     return prev
                 }
             });
-        }, 1500);
+            setShowTimer(false);
+        }, 3500);
+
     }
     
     return (
