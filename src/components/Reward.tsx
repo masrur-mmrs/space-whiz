@@ -1,20 +1,32 @@
 'use client'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import rewardsData from '@/data/rewards.json'
 import useLocalStorage from '@/hooks/useLocalStorage';
 import BadgeCard from './cards/BadgeCard';
 import GalaxyMapButton from './buttons/GalaxyMapButton';
+import Realistic from 'react-canvas-confetti/dist/presets/realistic';
+import rewardsData from '@/data/rewards.json'
 
 const Reward: React.FC = ({}) => {
     const params = useParams<{reward: string}>()
+    const [confettiAnimation, setConfettiAnimation] = useState<boolean>(true);
     const level = params.reward
     const [rewards] = useLocalStorage<Rewards>("rewards", rewardsData);
     const reward = rewards[level]
 
+    useEffect(() => {
+        const cleanupConfetti = () => {
+            setTimeout(() => {
+                setConfettiAnimation(false);
+            }, 3000);
+        }
+        return () => cleanupConfetti();
+    }, []);
+
     console.log(params.reward)
     return (
         <div className="flex flex-col items-center justify-center gap-8 mt-10 mx-auto max-w-[90vw]">
+            {confettiAnimation && <Realistic autorun={{ speed: 0.3, duration: 3000 }}/>}
             <BadgeCard
                 emoji={reward.emoji}
                 badge={reward.badge}
