@@ -7,6 +7,8 @@ import LearningOutcomeCard from './cards/LearningOutcomeCard';
 import learningOutcomesData from '@/data/learning_outcomes.json'
 import videoData from '@/data/videos.json'
 import useLocalStorage from '@/hooks/useLocalStorage';
+import VideoPlayerSkeleton from '@/loading-skeletons/VideoPlayerSkeleton';
+import AdventureCardSkeleton from '@/loading-skeletons/AdventureCardSkeleton';
 
 const Mission: React.FC = () => {
     const params = useParams<{mission : string, adventure: string}>()
@@ -17,7 +19,7 @@ const Mission: React.FC = () => {
     const learningOutcomes = learningOutcomesData as LearningOutcomes
     const learningObjective = learningOutcomes[params.mission];
 
-    const [parsedVideos, setParsedVideos] = useLocalStorage<Missions>("videos", videoData as Missions);
+    const [parsedVideos, setParsedVideos, hydrated] = useLocalStorage<Missions>("videos", videoData as Missions);
 
     useEffect(() => {
         for (const adventure in parsedVideos) {
@@ -36,19 +38,19 @@ const Mission: React.FC = () => {
             ...prevVideos,
             [adventure]: {
             ...prevVideos[adventure],
-            [params.mission]: {
-                ...prevVideos[params.adventure][params.mission],
-                completed: true
-            }
+                [params.mission]: {
+                    ...prevVideos[adventure][params.mission],
+                    completed: true
+                }
             }
         }))
-        console.log("New Videos:", parsedVideos);
     }
 
+    if (!hydrated) return <AdventureCardSkeleton/>
     return (
         <div className="flex flex-col items-center justify-center ml-5 mr-5 :w-fit">
             <Navbar title={mission}/>
-            <VideoPlayer src={video?.link || ""} level={params.mission} markVideoCompleted={markVideoCompleted}/>
+            {(!hydrated)?<VideoPlayerSkeleton/>:((video.link.length > 0) && <VideoPlayer src={video!.link} level={params.mission} markVideoCompleted={markVideoCompleted}/>)}
             <LearningOutcomeCard learningOutcomes={learningObjective}></LearningOutcomeCard>
         </div>
     );

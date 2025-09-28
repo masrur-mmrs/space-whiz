@@ -1,12 +1,20 @@
 import React from 'react';
 import HoverScaleWrapper from '../wrapper/HoverScaleWrapper';
+import Link from 'next/link';
 
-const AdventureButton: React.FC = ({}) => {
+interface AdventureButtonProps {
+    adventure: string;
+}
+
+const AdventureButton: React.FC<AdventureButtonProps> = ({ adventure }) => {
     return (
         <HoverScaleWrapper>
-            <button className="bg-gradient-to-r from-sunburst-yellow via-sunset-orange to-sunburst-orange text-white text-shadow-md text-xl font-bold my-3 w-52 h-10 rounded-3xl flex items-center justify-center">
+            <Link 
+                href={`/adventures/${adventure.replaceAll(" ", "-").toLowerCase()}`}
+                className="bg-gradient-to-r from-sunburst-yellow via-sunset-orange to-sunburst-orange text-white text-shadow-md text-xl font-bold my-3 w-52 h-10 rounded-3xl flex items-center justify-center"
+            >
             🚀 Start Adventure
-            </button>
+            </Link>
         </HoverScaleWrapper>
     );
 };

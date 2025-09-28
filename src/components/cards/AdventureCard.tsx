@@ -24,12 +24,12 @@ const AdventureCard: React.FC<AdventureCardProps> = ({ index, adventureTitle, ad
         const adventure = adventureTitle.replaceAll(" ", "-").toLocaleLowerCase()
         for (const chapter in missions[adventure]) {
             if (missions[adventure][chapter].completed) {
-                console.log("Completed:", chapter);
+                // console.log("Completed:", chapter);
                 completedMissions++;
             }
         }
         if (completedMissions === 3) {
-            console.log("Marked", index);
+            // console.log("Marked", index);
             markAdventureCompleted(index);
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps

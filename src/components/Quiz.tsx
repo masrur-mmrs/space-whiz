@@ -7,23 +7,36 @@ import ProgressBar from './ProgressBar';
 import QuizCompleteCard from './cards/QuizCompleteCard';
 import quizData from "@/data/quiz.json"
 
+interface QuizSet {
+    [key: string] : QuizData
+}
+
 const Quiz: React.FC = ({}) => {
     const params = useParams<{quiz : string}>()
     const [quiz, setQuiz] = useState<Quiz[]>([]);
+    const [adventure, setAdventure] = useState<string>("");
     const [questionNumber, setQuestionNumber] = useState<number>(0);
     const [correctAnswers, setCorrectAnswers] = useState<number>(0);
     
     const level = params.quiz.replaceAll("-", " ").replace(/\b\w/g, (c) => c.toUpperCase())
-    const quizzes = quizData as QuizData
+    const quizSet = quizData as QuizSet
 
     useEffect(() => {
-        setQuiz(quizzes[params.quiz]);
-    }, [params.quiz, quizzes]);
+        if (quizSet) {
+            for (const adventure in quizSet) {
+                for (const mission in quizSet[adventure]) {
+                    if (mission === params.quiz) {
+                        setAdventure(adventure);
+                        setQuiz(quizSet[adventure][params.quiz]);
+                    }
+                }
+            }   
+        }
+    }, [params.quiz, adventure, quizSet]);
 
     const resetQuiz = () => {
         setQuestionNumber(0);
         setCorrectAnswers(0);
-        setQuiz(quizzes[params.quiz]);
     }
 
     return (

@@ -21,7 +21,6 @@ const LanguageSelect : React.FC<LanguageSelectProps> = ({ type, state, setPrefer
 
     const updatePreferences = useCallback(
       () => {
-        console.log("run")
         setPreferences((prev) => {
             return {
                 ...prev,
@@ -29,12 +28,13 @@ const LanguageSelect : React.FC<LanguageSelectProps> = ({ type, state, setPrefer
             }
         })
       },
-      [type, value, setPreferences],
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      [type, value],
     )
     
     useEffect(() => { 
         updatePreferences();
-    }, [value]);
+    }, [updatePreferences, value]);
 
     return (
         <div className="grid place-items-center">
