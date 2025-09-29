@@ -48,10 +48,11 @@ const Mission: React.FC = () => {
 
     if (!hydrated) return <AdventureCardSkeleton/>
     return (
-        <div className="flex flex-col items-center justify-center ml-5 mr-5 :w-fit">
+        <div className="flex flex-col items-center justify-center w-fit">
             <Navbar title={mission}/>
             {(!hydrated)?<VideoPlayerSkeleton/>:((video.link.length > 0) && <VideoPlayer src={video!.link} level={params.mission} markVideoCompleted={markVideoCompleted}/>)}
             <LearningOutcomeCard learningOutcomes={learningObjective}></LearningOutcomeCard>
+            <footer className="min-h-10"></footer>
         </div>
     );
 };

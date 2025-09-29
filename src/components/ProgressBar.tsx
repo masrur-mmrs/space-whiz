@@ -21,7 +21,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
 
     return (
         <div 
-            className="w-full bg-gray-500 rounded-full overflow-hidden mt-8" 
+            className="w-100 sm:w-full bg-gray-500 rounded-full overflow-hidden mt-8" 
             style={{ height }}
         >
             <motion.div

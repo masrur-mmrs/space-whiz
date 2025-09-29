@@ -50,7 +50,7 @@ const AdventureList: React.FC<AdventureListProps> = ({ setNextAdventure }) => {
 
     if (!hydrated) return <AdventureListSkeleton/>
     return (
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 w-max h-max p-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 w-full h-max p-4">
             {
                 adventures.map((adventure, i) => 
                     <AdventureCard

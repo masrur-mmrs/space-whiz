@@ -30,7 +30,7 @@ const QuizCompleteCard: React.FC<QuizCompleteCardProps> = ({level, correctAnswer
 
     return (
         <div className="flex flex-col items-center justify-center gap-4 mt-10">
-            <div className="flex flex-col items-center justify-center rounded-3xl bg-space-blue p-6 w-md shadow-2xl">
+            <div className="flex flex-col items-center justify-center rounded-3xl bg-space-blue p-6 w-100 sm:w-md shadow-2xl">
                 <Header/>
                 <h2 className="text-4xl font-semibold text-shadow-2xl">{correctAnswers}/4</h2>
                 <Description/>

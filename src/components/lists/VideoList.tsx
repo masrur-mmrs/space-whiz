@@ -9,7 +9,7 @@ interface VideoListProps {
 
 const VideoList: React.FC<VideoListProps> = ({ videos }) => {
     return (
-        <div className="flex flex-col items-center justify-center gap-18 my-8">
+        <div className="flex flex-col items-center justify-center gap-18 my-8 w-full">
             {videos.map(((video, index) => 
                 <VideoCard key={index} video={video}/>
             ))}

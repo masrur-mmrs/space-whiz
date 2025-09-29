@@ -46,7 +46,7 @@ const QuizCard: React.FC<QuizCardProps> = ({question, options, answer, setCorrct
     }
     
     return (
-        <div className="flex flex-col items-center justify-center rounded-3xl bg-space-blue p-4 w-md">
+        <div className="flex flex-col items-center justify-center rounded-3xl bg-space-blue p-4 w-100 sm:w-md">
             <h2 className="text-2xl font-semibold my-2 text-center text-shadow-lg">{question}</h2>
             <div className="grid grid-cols-2 gap-4 mb-2">
                 {

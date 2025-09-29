@@ -3,7 +3,7 @@ import { Fredoka } from "next/font/google";
 import "./globals.css";
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
-import Background from "@/components/Background";
+import Stars from "@/components/Stars";
 config.autoAddCss = false
 
 const fredoka = Fredoka({
@@ -29,7 +29,9 @@ export default function RootLayout({
       >
         <main className="flex flex-col items-center justify-center">
           <div className="z-10">{children}</div>
-          <Background/>
+          <div className="galaxy z-0">
+            <Stars/>
+          </div>
         </main>
       </body>
     </html>

@@ -11,12 +11,12 @@ const NextQuestion: React.FC<NextQuestionProps> = ({ questionNumber }) => {
         <motion.div 
             className="flex flex-row items-center justify-center mt-5 gap-2"
             initial={{ scale: 0 }}
-            exit={{ scale: 0 }}
             animate={{ scale: 1 }}
+            exit={{ scale: 0 }}
             transition={{
                 type: "spring",
                 stiffness: 120,
-                damping: 15,
+                damping: 15
             }}
         >
             <p className="text-gray-400 font-semibold text-lg">{(questionNumber<3)?"Next question in ": "Results in "}</p>

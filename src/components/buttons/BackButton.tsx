@@ -11,7 +11,7 @@ const BackButton: React.FC = ({}) => {
         <HoverScaleWrapper scale={1.15}>
             <button
                 onClick={router.back}
-                className="bg-gradient-to-r from-violet-700 via-violet-500 to-fuchsia-400 p-1 rounded-2xl text-shadow-xs flex items-center justify-center"
+                className="bg-gradient-to-r from-violet-700 via-violet-500 to-fuchsia-400 p-1 rounded-2xl text-shadow-xs flex items-center justify-center cursor-pointer"
             >
                 <FontAwesomeIcon icon={faArrowLeft} size="2x"/>
             </button>

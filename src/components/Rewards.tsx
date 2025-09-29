@@ -1,16 +1,19 @@
+'use client'
 import React from 'react';
 import Navbar from './Navbar';
 import BadgeCollectionCard from './cards/BadgeCollectionCard';
-import adventures from "@/data/adventures.json"
 import RewardsList from './lists/RewardsList';
 import DetailsCard from './cards/DetailsCard';
 import GalaxyMapButton from './buttons/GalaxyMapButton';
+import adventuresData from "@/data/adventures.json"
+import useLocalStorage from '@/hooks/useLocalStorage';
 
 const Rewards: React.FC = ({}) => {
+    const [adventures] = useLocalStorage<Adventures[]>("adventures", adventuresData);
     const completedAdventures = adventures.filter(adventure => adventure.completed).length;
 
     return (
-        <div className="flex flex-col items-center justify-center mt-148 sm:mt-152 mb-10 ml-5 mr-5 gap-1.5">
+        <div className="flex flex-col items-center justify-center mb-10 gap-1.5">
             <Navbar title="My Rewards"/>
             <BadgeCollectionCard completed={completedAdventures}/>
             <RewardsList adventures={adventures}/>

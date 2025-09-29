@@ -19,7 +19,7 @@ const Adventure: React.FC = () => {
     const videos = missions[params.adventure];
 
     return (
-        <div className="mt-148">
+        <div className="flex flex-col items-center justify-center">
             <Navbar title={`Mission: ${mission}`}/>
             <LiveSolarData/>
             <h1 className="text-3xl font-extrabold text-shadow-xs text-center mb-4 mt-6">🎬 Learn and Explore</h1>

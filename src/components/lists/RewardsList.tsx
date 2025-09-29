@@ -9,7 +9,7 @@ interface RewardsListProps {
 
 const RewardsList: React.FC<RewardsListProps> = ({ adventures }) => {
     return (
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 w-max h-max p-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 w-max h-max p-4">
             {
                 adventures.map((adventure, i) => 
                     <RewardCard

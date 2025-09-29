@@ -8,7 +8,7 @@ interface LearningOutcomeCardProps {
 
 const LearningOutcomeCard: React.FC<LearningOutcomeCardProps> = ({ learningOutcomes }) => {
     return (
-        <div className="flex flex-col items-center justify-center bg-space-blue w-fit rounded-3xl border p-4 mt-8">
+        <div className="flex flex-col items-center justify-center bg-space-blue w-100 sm:w-fit rounded-3xl border p-8 mt-8">
             <h1 className="text-xl font-extrabold mb-2">🧠 What You Learned</h1>
             {learningOutcomes.map((value, index) => 
                 <p key={index} className="text-gray-400">{value}</p>

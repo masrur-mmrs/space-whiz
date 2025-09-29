@@ -31,12 +31,15 @@
   }
 }
 
-body {
+html, body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   width: 100%;
-  height: 100vh;
+  height: auto;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
   position: relative;
   display: flex;
   align-items: center;
@@ -94,11 +97,14 @@ progress::-moz-progress-bar {
 }
 
 .galaxy {
-    width: 100%;
-    height: 200vh;
-    position: absolute;
-    overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: fixed; /* stays in place */
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }
+
 
 .stars1 {
     width: 1px;

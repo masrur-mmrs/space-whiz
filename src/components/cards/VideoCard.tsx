@@ -11,10 +11,10 @@ interface VideoCardProps {
 
 const VideoCard: React.FC<VideoCardProps> = ({ video }) => {
     return (
-        <HoverScaleWrapper style="w-full h-full">
+        <HoverScaleWrapper style="w-sm h-60 sm:w-md sm:h-70">
             <Link href={`/mission/${video.title.toLowerCase().replace(/\s+/g, '-')}`}>
                 <div
-                    className="w-full h-52 rounded-2xl bg-space-blue shadow-2xl text-center glow-on-hover"
+                    className="rounded-2xl bg-space-blue shadow-2xl text-center glow-on-hover w-sm h-60 sm:w-full sm:h-70"
                 >
                     <Thumbnail>{video.thumbnail}</Thumbnail>
                     <h2 className="text-xl font-semibold text-shadow-xs w-full bg-space-blue pt-4">{video.title}</h2>
