@@ -3,10 +3,11 @@ import SunWatch from '@/components/SunWatch';
 import { getSolarFlareData } from '@/utils/utils';
 
 const date = new Date()
-const endDate = new Date(date.toISOString().slice(0, 10));
+const endDate = date.toISOString().slice(0, 10);
 
 const currentYear = new Date().getFullYear();
-const startDate = new Date(`${currentYear}-01-01`);
+const currentMonth = new Date().getMonth();
+const startDate = `${currentYear}-${currentMonth + 1}-01`;
 
 const solarFlareData : SolarFlare[] = await getSolarFlareData(startDate, endDate)
 

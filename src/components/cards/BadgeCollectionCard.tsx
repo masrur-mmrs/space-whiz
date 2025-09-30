@@ -11,7 +11,7 @@ const BadgeCollectionCard: React.FC<BadgeCollectionCardProps> = ({ completed = 0
             <span className="text-4xl">🏆</span>
             <h2 className="text-2xl font-bold my-4">Badge Collection</h2>
             <p className="text-gray-400 mb-4">{completed} of 6 badges earned</p>
-            <ProgressBar 
+            <ProgressBar
                 value={(completed*100/6)}
                 color="#2ecc71"
             />

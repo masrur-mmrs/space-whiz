@@ -40,7 +40,9 @@ export const translateLocation = (location: string) => {
     return `Solar coordinates: ${location} 🌞`
 }
 
-export const getSolarFlareData = async (startDate: Date, endDate: Date) => {
+export const formatDate = (date: Date) => date.toISOString().split("T")[0];
+
+export const getSolarFlareData = async (startDate: string, endDate: string) => {
     try {
         const res = await fetch(`https://kauai.ccmc.gsfc.nasa.gov/DONKI/WS/get/FLR?startDate=${startDate}&endDate=${endDate}`);
         const data = await res.json();

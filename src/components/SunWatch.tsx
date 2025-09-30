@@ -8,26 +8,34 @@ import Navbar from '@/components/Navbar';
 import SolarFlares from '@/components/SolarFlares';
 import SolarFlareFooter from '@/components/SolarFlareFooter';
 import SolarFlareTimeFrame from '@/components/SolarFlareTimeFrame';
-import { getSolarFlareData } from '@/utils/utils';
+import { formatDate, getSolarFlareData } from '@/utils/utils';
 
 interface SunWatchProps {
     solarFlareData: SolarFlare[];
 }
 
 const SunWatch: React.FC<SunWatchProps> = ({ solarFlareData }) => {
-    const [startDate, setStartDate] = useState<Date>(new Date("2025-01-01"))
+    const currentYear = new Date().getFullYear();
+    const currentMonth = new Date().getMonth();
+    const [startDate, setStartDate] = useState<Date>(new Date(`${currentYear}-${currentMonth + 1}-01`))
     const [endDate, setEndDate] = useState<Date>(new Date())
     const [filteredFlares, setFilteredFlares] = useState<SolarFlare[]>([])
 
     const updateSolarData = async () => {
-        const filtered = await getSolarFlareData(startDate, endDate)
+        const start = formatDate(startDate);
+        const end = formatDate(endDate);
+        const filtered = await getSolarFlareData(start, end)
+        console.log(filtered)
         setFilteredFlares(filtered)
     }
 
     useEffect(() => {
         if (solarFlareData.length > 0) {
             const fetchSolarData = async () => {
-                const filtered = await getSolarFlareData(startDate, endDate)
+                const start = formatDate(startDate);
+                const end = formatDate(endDate);
+                const filtered = await getSolarFlareData(start, end)
+                console.log(filtered)
                 setFilteredFlares(filtered)
             }
             fetchSolarData()
