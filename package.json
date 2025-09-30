@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack --hostname 192.168.50.58 & npx next-video sync -w --192.168.50.58",
+    "dev": "next dev --turbopack --hostname 192.168.1.4 & npx next-video sync -w --192.168.1.4",
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint"

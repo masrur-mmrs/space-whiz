@@ -64,4 +64,37 @@ declare interface Rewards {
     }
 }
 
+declare interface SolarFlarePowerLevel {
+    icon : string;
+    flareClass: string;
+    flareTitle : string;
+    flareClassBackground : string;
+    description : string
+}
+declare interface Instrument {
+    displayName: string;
+}
+
+declare interface LinkedEvent {
+    activityID: string;
+}
+
+declare interface SolarFlare {
+    flrID: string;
+    catalog: string;
+    instruments: Instrument[];
+    beginTime: string;
+    peakTime: string;
+    endTime: string;
+    classType: string;
+    sourceLocation: string;
+    activeRegionNum: number;
+    note: string;
+    submissionTime: string;
+    versionId: number;
+    link: string;
+    linkedEvents: LinkedEvent[] | null;
+    sentNotifications: null;
+}
+
 declare type Language = "English" | "Bangla";

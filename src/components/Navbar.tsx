@@ -3,10 +3,10 @@ import Title from './Title';
 import BackButton from './buttons/BackButton';
 
 interface NavbarProps {
-    title: string;
+    title?: string;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ title }) => {
+const Navbar: React.FC<NavbarProps> = ({ title = "" }) => {
     return (
         <nav className="flex flex-row items-center justify-start w-full p-4 mt-10 mb-3">
             <BackButton/>

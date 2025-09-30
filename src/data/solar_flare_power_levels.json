@@ -1,0 +1,37 @@
+[
+    {
+        "icon" : "✨",
+        "flareClass": "A",
+        "flareTitle" : "Tiny Sparkle",
+        "flareClassBackground" : "#FF9D4E",
+        "description" : "Super gentle space sparkles!"
+    },
+    {
+        "icon" : "🌟",
+        "flareClass": "B",
+        "flareTitle" : "Little Star",
+        "flareClassBackground" : "#1686cb",
+        "description" : "Small but bright space bursts!"
+    },
+    {
+        "icon" : "💫",
+        "flareClass": "C",
+        "flareTitle" : "Space Firework",
+        "flareClassBackground" : "#f06aff",
+        "description" : "Cool cosmic fireworks!"
+    },
+    {
+        "icon" : "🔥",
+        "flareClass": "M",
+        "flareTitle" : "Solar Blast",
+        "flareClassBackground" : "#F8CE59",
+        "description" : "Powerful sun explosions!"
+    },
+    {
+        "icon" : "💥",
+        "flareClass": "X",
+        "flareTitle" : "MEGA BOOM!",
+        "flareClassBackground" : "#ff005f",
+        "description" : "Powerful sun explosions!"
+    }
+]

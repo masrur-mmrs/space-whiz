@@ -23,7 +23,6 @@ const Reward: React.FC = ({}) => {
         return () => cleanupConfetti();
     }, []);
 
-    console.log(params.reward)
     return (
         <div className="flex flex-col items-center justify-center gap-8 mt-10 mx-auto max-w-[90vw]">
             {confettiAnimation && <Realistic autorun={{ speed: 0.3, duration: 3000 }}/>}
