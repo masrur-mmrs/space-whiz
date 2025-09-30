@@ -8,7 +8,7 @@ import Navbar from '@/components/Navbar';
 import SolarFlares from '@/components/SolarFlares';
 import SolarFlareFooter from '@/components/SolarFlareFooter';
 import SolarFlareTimeFrame from '@/components/SolarFlareTimeFrame';
-import { getSolarFlareData } from '@/app/api/route';
+import { getSolarFlareData } from '@/utils/utils';
 
 interface SunWatchProps {
     solarFlareData: SolarFlare[];

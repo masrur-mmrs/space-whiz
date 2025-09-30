@@ -1,6 +1,6 @@
 import React from 'react';
 import SunWatch from '@/components/SunWatch';
-import { getSolarFlareData } from '../api/route';
+import { getSolarFlareData } from '@/utils/utils';
 
 const date = new Date()
 const endDate = new Date(date.toISOString().slice(0, 10));
