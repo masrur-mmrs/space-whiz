@@ -25,7 +25,7 @@ const SunWatch: React.FC<SunWatchProps> = ({ solarFlareData }) => {
         const start = formatDate(startDate);
         const end = formatDate(endDate);
         const filtered = await getSolarFlareData(start, end)
-        console.log(filtered)
+        // console.log(filtered)
         setFilteredFlares(filtered)
     }
 
@@ -35,7 +35,7 @@ const SunWatch: React.FC<SunWatchProps> = ({ solarFlareData }) => {
                 const start = formatDate(startDate);
                 const end = formatDate(endDate);
                 const filtered = await getSolarFlareData(start, end)
-                console.log(filtered)
+                // console.log(filtered)
                 setFilteredFlares(filtered)
             }
             fetchSolarData()
@@ -56,7 +56,7 @@ const SunWatch: React.FC<SunWatchProps> = ({ solarFlareData }) => {
             />
             <SpaceFactsCard/>
             <SolarFlareLevels/>
-            <SolarFlares solarFlareData={solarFlareData}/>
+            <SolarFlares solarFlareData={filteredFlares}/>
             <SolarFlareFooter/>
         </div>
     );
