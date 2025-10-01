@@ -9,7 +9,7 @@ interface SolarFalreListProps {
 
 const SolarFalreList: React.FC<SolarFalreListProps> = ({ solarFlareData }) => {
     return (
-        <div className="grid grid-rows-2 sm:grid-cols-2 items-center justify-center gap-4">
+        <div className="grid grid-rows-1 sm:grid-cols-2 items-center justify-center gap-4">
             {[...solarFlareData].reverse().map((solarFlare, i) => (
                 <SolarFlareCard
                     key={i}
