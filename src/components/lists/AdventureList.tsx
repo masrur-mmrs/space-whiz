@@ -21,32 +21,30 @@ const AdventureList: React.FC<AdventureListProps> = ({ setNextAdventure }) => {
     }
 
     const recentlyUnlocked = (i: number) => {
-        if (i > 0 && i < adventures.length) {
-            if (adventures[i-1].completed && !adventures[i + 1].completed) {
-                setNextAdventure(adventures[i].title)
+        if (i > 0 && i < adventures.length - 1) {
+            if (adventures[i - 1].completed && !adventures[i + 1]?.completed) {
+                setNextAdventure(adventures[i].title);
                 return true;
-            } else {
-                return false;
             }
-        } else if (i === 0) {
+            return false;
+        } 
+        if (i === 0) {
             if (!adventures[i].completed) {
-                setNextAdventure(adventures[i].title)
+                setNextAdventure(adventures[i].title);
                 return true;
-            } else {
-                return false;
             }
-        }  else if (i === adventures.length) {
-            if (adventures[i-1].completed) {
-                setNextAdventure(adventures[i].title)
-                return true
-            } else {
-                return false
-            }
-        } else {
-            setNextAdventure(adventures[i].title)
             return false;
         }
-    }
+        if (i === adventures.length - 1) {
+            if (adventures[i - 1].completed) {
+                setNextAdventure(adventures[i].title);
+                return true;
+            }
+            return false;
+        }
+        return false;
+    };
+
 
     if (!hydrated) return <AdventureListSkeleton/>
     return (
