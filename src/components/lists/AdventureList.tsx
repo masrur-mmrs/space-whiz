@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, { useEffect } from 'react';
 import AdventureCard from '../cards/AdventureCard';
 import useLocalStorage from '@/hooks/useLocalStorage';
 import adventuresData from '@/data/adventures.json'
@@ -20,24 +20,29 @@ const AdventureList: React.FC<AdventureListProps> = ({ setNextAdventure }) => {
         )
     }
 
+    useEffect(() => {
+        const next = adventures.find((_, i) => recentlyUnlocked(i));
+        if (next) {
+            setNextAdventure(next.title);
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [adventures, setNextAdventure]);
+
     const recentlyUnlocked = (i: number) => {
         if (i > 0 && i < adventures.length - 1) {
             if (adventures[i - 1].completed && !adventures[i + 1]?.completed) {
-                setNextAdventure(adventures[i].title);
                 return true;
             }
             return false;
         } 
         if (i === 0) {
             if (!adventures[i].completed) {
-                setNextAdventure(adventures[i].title);
                 return true;
             }
             return false;
         }
         if (i === adventures.length - 1) {
             if (adventures[i - 1].completed) {
-                setNextAdventure(adventures[i].title);
                 return true;
             }
             return false;
