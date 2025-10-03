@@ -45,7 +45,7 @@ The *Stellar Stories* challenge calls for creative ways to make this science **e
 ## 🎥 Demo & Link
 
 - Live Demo: [SpaceWhiz](https://space-whiz.vercel.app)  
-- Video Demo: [Video](https://youtu.be/MHWj_tjFkPs?si=PIlUJWUc3TjzB7Lz) 
+- Video Demo: [Video](https://www.youtube.com/watch?v=7WWSCfQajis)
 
 ---
 
