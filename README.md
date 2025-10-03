@@ -121,7 +121,8 @@ Integrate more NASA datasets (auroras, CMEs, asteroids)
 
 ## Our Team
 
-- KH Anabil Ditisha (Team Lead)
+- KH Anabil Ditisha (Team Lead)\
+  email: <ditisha03@gmail.com>
 
 - Arpon Sarkar Choity (Researcher)\
   email: <arponsarkar2024@gmail.com>
