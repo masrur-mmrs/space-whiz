@@ -6,6 +6,7 @@ Built for NASA Space Apps Challenge 2025 under the *Stellar Stories* category.
 ---
 
 ## 📖 Overview
+
 SpaceWhizz transforms the invisible science of **solar flares, geomagnetic storms, and auroras** into kid-friendly adventures.  
 Children progress through **9 story-driven adventures**, each with 3 short missions.  
 After each mission, they complete a fun quiz to unlock the next level.  
@@ -15,8 +16,8 @@ After each animated video, kids solve a short quiz challenge. Passing the quiz u
 And here’s the exciting part: our Sun-Watch feature connects directly to **NASA’s CCMC DONKI API**. This means children don’t just learn about solar flares in theory — they see real flare events from the last 30 days, presented in kid-friendly cards with simple icons and animations. It’s like watching the Sun tell its story in real time.
 SpaceWhizz blends storytelling, play, and NASA data into one seamless experience — transforming space weather from abstract science into a living adventure that children can explore step by step.”
 
-
 Key Features:
+
 - 🎬 Short animated videos powered by `next-video` and **Mux streaming**  
 - 🌀 Smooth storytelling animations with **Motion** (`motion.div`)  
 - 📡 Real-time solar flare feed via NASA **CCMC DONKI API** (Sun-Watch feature)  
@@ -27,8 +28,10 @@ Demo: 👉 [SpaceWhiz](https://space-whiz.vercel.app)
 ---
 
 ## ❓ Problem Statement – *Stellar Stories*
+
 Space weather is powerful but **invisible and often forgotten**.  
 Kids rarely know how solar storms affect:
+
 - 🚜 Farmers who depend on GPS  
 - ✈️ Pilots who rely on communication signals  
 - 🧑‍🚀 Astronauts exposed to radiation  
@@ -40,12 +43,14 @@ The *Stellar Stories* challenge calls for creative ways to make this science **e
 ---
 
 ## 🎥 Demo & Link
+
 - Live Demo: [https://space-whiz.vercel.app](https://space-whiz.vercel.app)  
 - Video Demo: *(insert YouTube link here once uploaded)*  
 
 ---
 
 ## 🎯 Target Users
+
 - 👦 **Children (ages 8–14)** → primary learners  
 - 👩‍🏫 **Teachers** → fun classroom tool to explain abstract science  
 - 👨‍👩‍👧 **Parents** → meaningful screen time for kids  
@@ -54,7 +59,9 @@ The *Stellar Stories* challenge calls for creative ways to make this science **e
 ---
 
 ## 💡 Solution Overview
+
 SpaceWhizz answers the challenge with:
+
 - **Storytelling:** Adventures like *Dance of Lights* (auroras) and *The Blackout City* (power grid failures)  
 - **Interactive Quizzes:** Kids solve challenges to unlock new missions  
 - **NASA Data:** Live solar flare feed via **CCMC DONKI API** presented in kid-friendly cards  
@@ -63,7 +70,9 @@ SpaceWhizz answers the challenge with:
 ---
 
 ## 🏗️ Architecture Overview
+
 **Tech Stack:**
+
 - [Next.js 15](https://nextjs.org/) → core framework  
 - [Motion](https://motion.dev/) → animations  
 - [next-video](https://github.com/pacocoursey/next-video) + [Mux](https://mux.com/) → video player + streaming  
@@ -76,10 +85,10 @@ User → Next.js UI (React + Motion)
 → Sun-Watch feed (NASA CCMC DONKI API)
 → Progress & Badges stored client-side
 
-
 ---
 
 ## ⚙️ Installation
+
 Clone and run the project locally:
 
 ```bash
@@ -111,13 +120,14 @@ Add interactive videos
 Integrate more NASA datasets (auroras, CMEs, asteroids)
 
 ## Our Team
+
 - KH Anabil Ditisha (Team Lead)
 
 - Arpon Sarkar Choity (Researcher)\
-  email: arponsarkar2024@gmail.com
+  email: <arponsarkar2024@gmail.com>
 
 - Shahriar Imrose Soscho (Story Writer)\
-  email: shahriarimrosesoscho@gmail.com 
+  email: <shahriarimrosesoscho@gmail.com>
 
 - Md Masrur Rahman (Developer)\
-  email: masrur.mmrs@gmail.com
+  email: <masrur.mmrs@gmail.com>
