@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import SunWatchHeroSection from '@/components/SunWatchHeroSection';
 import SpaceFactsCard from '@/components/cards/SpaceFactsCard';
 import SolarDataButton from '@/components/buttons/SolarDataButton';
@@ -9,38 +9,26 @@ import SolarFlares from '@/components/SolarFlares';
 import SolarFlareFooter from '@/components/SolarFlareFooter';
 import SolarFlareTimeFrame from '@/components/SolarFlareTimeFrame';
 import { formatDate, getSolarFlareData } from '@/utils/utils';
+import { useQuery } from '@tanstack/react-query';
 
-interface SunWatchProps {
-    solarFlareData: SolarFlare[];
-}
 
-const SunWatch: React.FC<SunWatchProps> = ({ solarFlareData }) => {
+const SunWatch: React.FC = () => {
     const currentYear = new Date().getFullYear();
     const currentMonth = new Date().getMonth();
-    const [startDate, setStartDate] = useState<Date>(new Date(`${currentYear}-${currentMonth + 1}-01`))
-    const [endDate, setEndDate] = useState<Date>(new Date())
-    const [filteredFlares, setFilteredFlares] = useState<SolarFlare[]>([])
+    const [startDate, setStartDate] = useState<Date>(new Date(`${currentYear}-${currentMonth + 1}-01`));
+    const [endDate, setEndDate] = useState<Date>(new Date());
+
+    const start = formatDate(startDate);
+    const end = formatDate(endDate);
+
+    const { data: filteredFlares = [], isFetching, refetch } = useQuery({
+        queryKey: ["solarFlareData", start, end],
+        queryFn: () => getSolarFlareData(start, end),
+    })
 
     const updateSolarData = async () => {
-        const start = formatDate(startDate);
-        const end = formatDate(endDate);
-        const filtered = await getSolarFlareData(start, end)
-        // console.log(filtered)
-        setFilteredFlares(filtered)
+        refetch();
     }
-
-    useEffect(() => {
-        if (solarFlareData.length > 0) {
-            const fetchSolarData = async () => {
-                const start = formatDate(startDate);
-                const end = formatDate(endDate);
-                const filtered = await getSolarFlareData(start, end)
-                // console.log(filtered)
-                setFilteredFlares(filtered)
-            }
-            fetchSolarData()
-        }
-    }, [solarFlareData, startDate, endDate])
 
     return (
         <div className="flex flex-col items-center justify-center gap-8 w-90 sm:w-6xl mb-8">
@@ -56,7 +44,7 @@ const SunWatch: React.FC<SunWatchProps> = ({ solarFlareData }) => {
             />
             <SpaceFactsCard/>
             <SolarFlareLevels/>
-            <SolarFlares solarFlareData={filteredFlares}/>
+            {isFetching ? <p>Loading Solar Flare Data...</p> : <SolarFlares solarFlareData={filteredFlares}/>}
             <SolarFlareFooter/>
         </div>
     );
