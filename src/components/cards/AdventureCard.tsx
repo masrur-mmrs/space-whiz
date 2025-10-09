@@ -22,8 +22,8 @@ const AdventureCard: React.FC<AdventureCardProps> = ({ index, adventureTitle, ad
     useEffect(() => {
         let completedMissions: number = 0;
         const adventure = adventureTitle.replaceAll(" ", "-").toLocaleLowerCase()
-        for (const chapter in missions[adventure]) {
-            if (missions[adventure][chapter].completed) {
+        for (const chapter in missions![adventure]) {
+            if (missions![adventure][chapter].completed) {
                 // console.log("Completed:", chapter);
                 completedMissions++;
             }

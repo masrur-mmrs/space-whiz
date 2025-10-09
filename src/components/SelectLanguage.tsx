@@ -2,6 +2,8 @@
 
 import React, { useState, KeyboardEvent, useEffect, useCallback } from "react";
 import { LayoutGroup, motion } from "motion/react";
+import { useDispatch } from "react-redux";
+import { setLanguage } from "@/redux/slices/langugeSlice";
 
 interface LanguageSelectProps {
     type: string;
@@ -10,6 +12,7 @@ interface LanguageSelectProps {
 }
 
 const LanguageSelect : React.FC<LanguageSelectProps> = ({ type, state, setPreferences }) => {
+    const dispatch = useDispatch();
     const [value, setValue] = useState<Language>(state);
     const options: Language[] = ["English", "Bangla"];
 
@@ -27,9 +30,11 @@ const LanguageSelect : React.FC<LanguageSelectProps> = ({ type, state, setPrefer
                 [type]: value,
             }
         })
+        dispatch(setLanguage(value));
       },
+      
       // eslint-disable-next-line react-hooks/exhaustive-deps
-      [type, value],
+      [type, value, dispatch, setLanguage],
     )
     
     useEffect(() => { 

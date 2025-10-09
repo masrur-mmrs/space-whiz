@@ -10,13 +10,13 @@ import useLocalStorage from '@/hooks/useLocalStorage';
 
 const Rewards: React.FC = ({}) => {
     const [adventures] = useLocalStorage<Adventures[]>("adventures", adventuresData);
-    const completedAdventures = adventures.filter(adventure => adventure.completed).length;
+    const completedAdventures = adventures!.filter(adventure => adventure.completed).length;
 
     return (
         <div className="flex flex-col items-center justify-center mb-10 gap-1.5">
             <Navbar title="My Rewards"/>
             <BadgeCollectionCard completed={completedAdventures}/>
-            <RewardsList adventures={adventures}/>
+            <RewardsList adventures={adventures!}/>
             <DetailsCard
                 title="Keep Exploring"
                 description="Complete more missions to unlock new badges and become the ultimate space explorer!"

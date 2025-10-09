@@ -12,7 +12,7 @@ const Reward: React.FC = ({}) => {
     const [confettiAnimation, setConfettiAnimation] = useState<boolean>(true);
     const level = params.reward
     const [rewards] = useLocalStorage<Rewards>("rewards", rewardsData);
-    const reward = rewards[level]
+    const reward = rewards![level]
 
     useEffect(() => {
         const cleanupConfetti = () => {

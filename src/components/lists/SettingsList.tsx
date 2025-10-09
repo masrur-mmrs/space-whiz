@@ -6,7 +6,8 @@ import SelectCard from '../cards/SelectCard';
 import useLocalStorage from '@/hooks/useLocalStorage';
 
 const SettingsList: React.FC = ({}) => {
-    const [preferences, setPreferences] = useLocalStorage<Preferences>("preferences", preferencesData as Preferences)
+    const [preferences, setPreferences, hydrated] = useLocalStorage<Preferences>("preferences", preferencesData as Preferences)
+    if (!hydrated) return <div>Loading...</div>;
     return (
         <div className="flex flex-col items-center justify-center gap-4">
             <ToggleCard
@@ -15,7 +16,7 @@ const SettingsList: React.FC = ({}) => {
                 title="Use Live NASA Data"
                 description="Get real-time space weather updates"
                 type="liveData"
-                state={preferences.liveData}
+                state={preferences!.liveData}
                 setPreferences={setPreferences}
             />
             <ToggleCard
@@ -24,7 +25,7 @@ const SettingsList: React.FC = ({}) => {
                 title="Subtitles"
                 description="Show text during videos"
                 type="subtitles"
-                state={preferences.subtitles}
+                state={preferences!.subtitles}
                 setPreferences={setPreferences}
             />
             <SelectCard
@@ -33,7 +34,7 @@ const SettingsList: React.FC = ({}) => {
                 title="Language"
                 description="Choose your preferred language"
                 type="language"
-                state={preferences.language}
+                state={preferences!.language}
                 setPreferences={setPreferences}
             />
         </div>

@@ -5,6 +5,7 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import Stars from "@/components/Stars";
 import QueryProvider from "./providers/QueryProvider";
+import ReduxProvider from "./providers/Provider";
 config.autoAddCss = false
 
 const fredoka = Fredoka({
@@ -29,12 +30,14 @@ export default function RootLayout({
         className={`${fredoka.className} antialiased`}
       >
         <QueryProvider>
-          <main className="flex flex-col items-center justify-center">
-            <div className="z-10">{children}</div>
-            <div className="galaxy z-0">
-              <Stars/>
-            </div>
-          </main>
+          <ReduxProvider>
+            <main className="flex flex-col items-center justify-center">
+              <div className="z-10">{children}</div>
+              <div className="galaxy z-0">
+                <Stars/>
+              </div>
+            </main>
+          </ReduxProvider>
         </QueryProvider>
       </body>
     </html>

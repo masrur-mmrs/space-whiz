@@ -1,8 +1,11 @@
-'use client'
-import React, { useState } from 'react';
+"use client"
+import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import ToggleSwitch from '../ToggleSwitch';
+import { setRealTimeData } from '@/redux/slices/realTimeDataSlice';
+import { setCaption } from '@/redux/slices/captionSlice';
+import { useDispatch } from 'react-redux';
 
 
 interface ToggleCardProps {
@@ -17,17 +20,21 @@ interface ToggleCardProps {
 
 
 const ToggleCard: React.FC<ToggleCardProps> = ({ title, icon, iconColor, description, type, state, setPreferences }) => {
-    const [isOn, setIsOn] = useState(state);
+    const dispatch = useDispatch();
 
-    const handleToggle = (state: boolean) => {
-        setIsOn(state);
-        setPreferences((prev) => {
-            return {
-                ...prev,
-                [type]: state
-            }
-        })
-    }
+    const handleToggle = (newState: boolean) => {
+        setPreferences(prev => ({ ...prev, [type]: newState }));
+        if (type === "liveData") {
+            dispatch(setRealTimeData(newState));
+        } else {
+            dispatch(setCaption(newState));
+        };
+    };
+
+    useEffect(() => {
+        if (type === "liveData") dispatch(setRealTimeData(state));
+        else dispatch(setCaption(state));
+    }, [state, type, dispatch]);
     
     return (
         <div className="flex flex-row items-center justify-between bg-space-blue shadow-sm p-5 gap-3.5 w-full rounded-3xl select-none border transition-transform ease-in-out duration-300">
@@ -37,7 +44,7 @@ const ToggleCard: React.FC<ToggleCardProps> = ({ title, icon, iconColor, descrip
                 <p className="text-sm text-gray-500">{description}</p>
             </div>
             <div className="float-end">
-                <ToggleSwitch isOn={isOn} setIsOn={handleToggle}/>
+                <ToggleSwitch isOn={state} setIsOn={handleToggle}/>
             </div>
         </div>
     );

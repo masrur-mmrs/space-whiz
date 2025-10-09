@@ -21,7 +21,7 @@ const AdventureList: React.FC<AdventureListProps> = ({ setNextAdventure }) => {
     }
 
     useEffect(() => {
-        const next = adventures.find((_, i) => recentlyUnlocked(i));
+        const next = adventures!.find((_, i) => recentlyUnlocked(i));
         if (next) {
             setNextAdventure(next.title);
         }
@@ -29,20 +29,20 @@ const AdventureList: React.FC<AdventureListProps> = ({ setNextAdventure }) => {
     }, [adventures, setNextAdventure]);
 
     const recentlyUnlocked = (i: number) => {
-        if (i > 0 && i < adventures.length - 1) {
-            if (adventures[i - 1].completed && !adventures[i + 1]?.completed) {
+        if (i > 0 && i < adventures!.length - 1) {
+            if (adventures![i - 1].completed && !adventures![i + 1]?.completed) {
                 return true;
             }
             return false;
         } 
         if (i === 0) {
-            if (!adventures[i].completed) {
+            if (!adventures![i].completed) {
                 return true;
             }
             return false;
         }
-        if (i === adventures.length - 1) {
-            if (adventures[i - 1].completed) {
+        if (i === adventures!.length - 1) {
+            if (adventures![i - 1].completed) {
                 return true;
             }
             return false;
@@ -55,14 +55,14 @@ const AdventureList: React.FC<AdventureListProps> = ({ setNextAdventure }) => {
     return (
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 w-full h-max p-4">
             {
-                adventures.map((adventure, i) => 
+                adventures!.map((adventure, i) => 
                     <AdventureCard
                         key={i}
                         index={i}
                         adventureTitle={adventure.title}
                         adventureImage={adventure.image}
                         completed={adventure.completed}
-                        unlocked={i > 0 ? adventures[i - 1]!.completed : true}
+                        unlocked={i > 0 ? adventures![i - 1]!.completed : true}
                         recentlyUnlocked={recentlyUnlocked(i)}
                         markAdventureCompleted={markAdventureCompleted}
                     />
